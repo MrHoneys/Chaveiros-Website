@@ -41,9 +41,8 @@ Contribuições são bem-vindas! Se você quiser melhorar o projeto, basta criar
 ## Licença
 
 Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+![WhatsApp Image 2024-11-25 at 10 18 51](https://github.com/user-attachments/assets/91c6703e-67f3-41d9-8408-71e7aa354f38)
+![WhatsApp Image 2024-11-25 at 10 18 51 (1)](https://github.com/user-attachments/assets/79110903-0ede-4061-a77e-33b2ae2638bc)
 ![WhatsApp Image 2024-11-25 at 10 18 51 (4)](https://github.com/user-attachments/assets/c9ecd740-cfe2-415f-86ec-0508281a8ce9)
 ![WhatsApp Image 2024-11-25 at 10 18 51 (3)](https://github.com/user-attachments/assets/1f98f3b1-c64d-4ff1-a9d0-86f8be496bf1)
 ![WhatsApp Image 2024-11-25 at 10 18 51 (2)](https://github.com/user-attachments/assets/81d1e878-a60f-47e1-864d-01919e6a8234)
-![WhatsApp Image 2024-11-25 at 10 18 51 (1)](https://github.com/user-attachments/assets/79110903-0ede-4061-a77e-33b2ae2638bc)
-![WhatsApp Image 2024-11-25 at 10 18 51](https://github.com/user-attachments/assets/91c6703e-67f3-41d9-8408-71e7aa354f38)
-![WhatsApp Image 2024-11-25 at 10 04 38](https://github.com/user-attachments/assets/6f87e2cf-2ae9-4293-ac9c-233ee9823bef)
