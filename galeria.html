@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria - Afonso Chaves</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Cabeçalho -->
+  <header class="flex flex-col md:flex-row justify-between items-center py-6 px-10 bg-black">
+    <h1 class="text-2xl font-bold mb-4 md:mb-0">Afonso Chaves</h1>
+    <nav class="flex gap-6 mb-4 md:mb-0">
+      <a href="index.html" class="hover:text-gray-400">Menu</a>
+      <a href="contato.html" class="hover:text-gray-400">Contato</a>
+      <a href="index.html#sobre" class="hover:text-gray-400">Sobre</a>
+      <a href="galeria.html" class="hover:text-gray-400">Galeria</a>
+    </nav>
+    <a href="https://wa.me/5541984633130" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-500">Orçamentos</a>
+  </header>
+
+  <!-- Seção Galeria -->
+  <section id="galeria" class="py-20 px-10">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-12">Nossa Galeria de Produtos</h2>
+    
+    <!-- Galeria de imagens (10 por página) -->
+    <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <!-- As imagens serão inseridas aqui dinamicamente -->
+    </div>
+
+    <!-- Paginação -->
+    <div class="flex justify-center mt-10">
+      <button class="bg-gray-700 text-white py-2 px-4 rounded-l-lg hover:bg-gray-600" id="prevBtn" disabled>Voltar</button>
+      <button class="bg-gray-700 text-white py-2 px-4 rounded-r-lg hover:bg-gray-600" id="nextBtn">Próximo</button>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer id="contact" class="py-10 px-10 bg-gray-900 text-center">
+    <p class="text-gray-400 mb-4">© 2024 Afonso Chaves. Todos os direitos reservados.</p>
+    <div class="flex justify-center gap-4">
+      <a href="#" class="hover:text-indigo-500">Facebook</a>
+      <a href="#" class="hover:text-indigo-500">Instagram</a>
+      <a href="#" class="hover:text-indigo-500">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script>
+    // Lista de todas as imagens da galeria
+    const images = [
+      "https://via.placeholder.com/500x300?text=Chave+Residencial",
+      "https://via.placeholder.com/500x300?text=Chave+Comercial",
+      "https://via.placeholder.com/500x300?text=Chave+Especial",
+      "https://via.placeholder.com/500x300?text=Chave+Segurança",
+      "https://via.placeholder.com/500x300?text=Chave+Performance",
+      "https://via.placeholder.com/500x300?text=Chave+Automotiva",
+      "https://via.placeholder.com/500x300?text=Chave+Digital",
+      "https://via.placeholder.com/500x300?text=Chave+Hotel",
+      "https://via.placeholder.com/500x300?text=Chave+Pedal",
+      "https://via.placeholder.com/500x300?text=Chave+Codificação",
+      "https://via.placeholder.com/500x300?text=Chave+Portão",
+      "https://via.placeholder.com/500x300?text=Chave+Ferro",
+      "https://via.placeholder.com/500x300?text=Chave+De+Carro",
+      "https://via.placeholder.com/500x300?text=Chave+Porta",
+      "https://via.placeholder.com/500x300?text=Chave+Dupla",
+      "https://via.placeholder.com/500x300?text=Chave+Válvula",
+      "https://via.placeholder.com/500x300?text=Chave+Fechadura",
+      "https://via.placeholder.com/500x300?text=Chave+Caixa",
+      "https://via.placeholder.com/500x300?text=Chave+Porta",
+      "https://via.placeholder.com/500x300?text=Chave+Decoração"
+    ];
+
+    const itemsPerPage = 10;
+    let currentPage = 0;
+    const totalItems = images.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const gallery = document.getElementById('gallery');
+
+    // Função para renderizar as imagens de acordo com a página
+    function renderGallery() {
+      // Limpa as imagens atuais
+      gallery.innerHTML = '';
+      
+      // Calcula os índices das imagens que devem ser mostradas
+      const startIndex = currentPage * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      
+      // Exibe as imagens da página atual
+      const imagesToDisplay = images.slice(startIndex, endIndex);
+
+      imagesToDisplay.forEach((imageUrl) => {
+        const imageDiv = document.createElement('div');
+        imageDiv.classList.add('bg-gray-800', 'p-6', 'rounded-lg', 'shadow-lg');
+
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.alt = 'Imagem da Galeria';
+        img.classList.add('w-full', 'h-48', 'object-cover', 'rounded-lg', 'mb-4');
+
+        imageDiv.appendChild(img);
+        gallery.appendChild(imageDiv);
+      });
+
+      // Atualiza os botões de navegação
+      prevBtn.disabled = currentPage === 0;
+      nextBtn.disabled = currentPage === totalPages - 1;
+    }
+
+    // Função para navegar para a próxima página
+    nextBtn.addEventListener('click', () => {
+      if (currentPage < totalPages - 1) {
+        currentPage++;
+        renderGallery();
+      }
+    });
+
+    // Função para navegar para a página anterior
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 0) {
+        currentPage--;
+        renderGallery();
+      }
+    });
+
+    // Inicializa a galeria e a navegação
+    renderGallery();
+  </script>
+
+</body>
+</html>
